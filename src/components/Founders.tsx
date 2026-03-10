@@ -34,10 +34,10 @@ export default function Founders() {
 
       <div className="relative z-10 mx-auto max-w-5xl px-6">
         <div className="text-center mb-20">
-          <p className="font-[family-name:var(--font-mono)] text-[10px] font-bold uppercase tracking-[0.3em] text-coral-400 mb-3">
+          <p className="font-[family-name:var(--font-mono)] text-[10px] font-bold uppercase tracking-[0.3em] text-brand-500 mb-3">
             Meet the Pack
           </p>
-          <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-5xl font-bold text-teal-900">
+          <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-5xl font-bold text-dark-900">
             Who We Are
           </h2>
         </div>
@@ -63,13 +63,13 @@ export default function Founders() {
               onMouseEnter={() => setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <div className="bg-white border border-teal-100 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-shadow duration-500">
+              <div className="bg-white border border-dark-100 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-shadow duration-500">
                 {/* Avatar circle */}
                 <div
                   className={`w-20 h-20 rounded-full flex items-center justify-center mb-6 ${
                     i === 0
-                      ? "bg-gradient-to-br from-teal-400 to-teal-600"
-                      : "bg-gradient-to-br from-coral-300 to-coral-500"
+                      ? "bg-gradient-to-br from-brand-400 to-brand-600"
+                      : "bg-gradient-to-br from-dark-600 to-dark-900"
                   }`}
                 >
                   <span className="font-[family-name:var(--font-heading)] text-xl font-bold text-white">
@@ -77,13 +77,13 @@ export default function Founders() {
                   </span>
                 </div>
 
-                <h3 className="font-[family-name:var(--font-heading)] text-xl font-bold text-teal-900">
+                <h3 className="font-[family-name:var(--font-heading)] text-xl font-bold text-dark-900">
                   {founder.name}
                 </h3>
-                <p className="font-[family-name:var(--font-mono)] text-[10px] font-bold uppercase tracking-widest text-coral-400 mt-1">
+                <p className="font-[family-name:var(--font-mono)] text-[10px] font-bold uppercase tracking-widest text-brand-500 mt-1">
                   {founder.role}
                 </p>
-                <p className="mt-4 text-sm text-teal-700/70 leading-relaxed">
+                <p className="mt-4 text-sm text-dark-400 leading-relaxed">
                   {founder.bio}
                 </p>
 
@@ -92,7 +92,7 @@ export default function Founders() {
                   {founder.specialties.map((s) => (
                     <span
                       key={s}
-                      className="px-3 py-1 text-[10px] font-[family-name:var(--font-mono)] font-bold uppercase tracking-wider bg-teal-50 text-teal-600 rounded-full"
+                      className="px-3 py-1 text-[10px] font-[family-name:var(--font-mono)] font-bold uppercase tracking-wider bg-brand-50 text-brand-700 rounded-full"
                     >
                       {s}
                     </span>

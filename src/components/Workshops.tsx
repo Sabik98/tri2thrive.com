@@ -8,7 +8,7 @@ const workshops = [
     description:
       "Master your technique in the water with personalized coaching from one of Poland's finest swimmers.",
     tag: "FEATURED",
-    tagColor: "bg-coral-400 text-white",
+    tagColor: "bg-brand-500 text-white",
   },
   {
     title: "Cycling Fundamentals",
@@ -19,7 +19,7 @@ const workshops = [
     description:
       "Build endurance, improve cadence, and learn nutrition strategies for long-distance rides.",
     tag: "COMING SOON",
-    tagColor: "bg-teal-100 text-teal-700",
+    tagColor: "bg-dark-100 text-dark-600",
   },
   {
     title: "Transition Training",
@@ -30,7 +30,7 @@ const workshops = [
     description:
       "Nail your T1 and T2 transitions. Shave minutes off your race with proven techniques.",
     tag: "COMING SOON",
-    tagColor: "bg-teal-100 text-teal-700",
+    tagColor: "bg-dark-100 text-dark-600",
   },
 ];
 
@@ -41,7 +41,7 @@ function TicketStub({
 }) {
   return (
     <div className="group relative">
-      <div className="flex flex-col sm:flex-row bg-white border border-teal-100 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+      <div className="flex flex-col sm:flex-row bg-white border border-dark-100 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
         {/* Left side — main info */}
         <div className="flex-1 p-6">
           <span
@@ -49,30 +49,30 @@ function TicketStub({
           >
             {workshop.tag}
           </span>
-          <h3 className="font-[family-name:var(--font-heading)] text-lg font-bold text-teal-900 mt-3">
+          <h3 className="font-[family-name:var(--font-heading)] text-lg font-bold text-dark-900 mt-3">
             {workshop.title}
           </h3>
-          <p className="text-sm text-teal-700/70 mt-2 leading-relaxed">
+          <p className="text-sm text-dark-400 mt-2 leading-relaxed">
             {workshop.description}
           </p>
         </div>
 
         {/* Perforation line */}
         <div className="hidden sm:flex flex-col items-center justify-center w-0">
-          <div className="h-full border-l-2 border-dashed border-teal-100" />
+          <div className="h-full border-l-2 border-dashed border-dark-100" />
         </div>
-        <div className="sm:hidden border-t-2 border-dashed border-teal-100" />
+        <div className="sm:hidden border-t-2 border-dashed border-dark-100" />
 
         {/* Right side — ticket stub */}
-        <div className="sm:w-48 p-6 flex flex-col justify-center items-start sm:items-center bg-teal-50/30">
-          <p className="font-[family-name:var(--font-heading)] text-sm font-bold text-teal-900">
+        <div className="sm:w-48 p-6 flex flex-col justify-center items-start sm:items-center bg-brand-50/30">
+          <p className="font-[family-name:var(--font-heading)] text-sm font-bold text-dark-900">
             {workshop.instructor}
           </p>
-          <p className="font-[family-name:var(--font-mono)] text-[9px] uppercase tracking-widest text-teal-500 mt-1">
+          <p className="font-[family-name:var(--font-mono)] text-[9px] uppercase tracking-widest text-brand-600 mt-1">
             {workshop.credential}
           </p>
           <div className="mt-4 space-y-1">
-            <p className="font-[family-name:var(--font-mono)] text-[10px] text-teal-600 flex items-center gap-1">
+            <p className="font-[family-name:var(--font-mono)] text-[10px] text-dark-400 flex items-center gap-1">
               <svg
                 width="10"
                 height="10"
@@ -86,7 +86,7 @@ function TicketStub({
               </svg>
               {workshop.date}
             </p>
-            <p className="font-[family-name:var(--font-mono)] text-[10px] text-teal-600 flex items-center gap-1">
+            <p className="font-[family-name:var(--font-mono)] text-[10px] text-dark-400 flex items-center gap-1">
               <svg
                 width="10"
                 height="10"
@@ -116,10 +116,10 @@ export default function Workshops() {
 
       <div className="relative z-10 mx-auto max-w-3xl px-6">
         <div className="text-center mb-16">
-          <p className="font-[family-name:var(--font-mono)] text-[10px] font-bold uppercase tracking-[0.3em] text-coral-400 mb-3">
+          <p className="font-[family-name:var(--font-mono)] text-[10px] font-bold uppercase tracking-[0.3em] text-brand-500 mb-3">
             Train Together
           </p>
-          <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-5xl font-bold text-teal-900">
+          <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-5xl font-bold text-dark-900">
             Workshops
           </h2>
         </div>

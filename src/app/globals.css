@@ -1,32 +1,30 @@
 @import "tailwindcss";
 
 @theme {
-  /* Colors - Race Tape palette */
-  --color-teal-50: #f0fdfa;
-  --color-teal-100: #ccfbf1;
-  --color-teal-200: #99f6e4;
-  --color-teal-300: #5eead4;
-  --color-teal-400: #2dd4bf;
-  --color-teal-500: #14b8a6;
-  --color-teal-600: #0d9488;
-  --color-teal-700: #0f766e;
-  --color-teal-800: #115e59;
-  --color-teal-900: #134e4a;
+  /* Brand colors from tri2thrive.com */
+  /* Primary green: #77be32 */
+  --color-brand-50: #f4fbea;
+  --color-brand-100: #e6f5d0;
+  --color-brand-200: #ceeba6;
+  --color-brand-300: #aedc72;
+  --color-brand-400: #91cd48;
+  --color-brand-500: #77be32;
+  --color-brand-600: #589722;
+  --color-brand-700: #44731e;
+  --color-brand-800: #385b1d;
+  --color-brand-900: #304d1c;
 
-  --color-coral-50: #fff1f0;
-  --color-coral-100: #ffe4e1;
-  --color-coral-200: #fecdc8;
-  --color-coral-300: #fda9a1;
-  --color-coral-400: #f97066;
-  --color-coral-500: #f04438;
-  --color-coral-600: #de3024;
-  --color-coral-700: #bb1f17;
-  --color-coral-800: #9a1e17;
-  --color-coral-900: #7f1f1a;
-
-  --color-amber-300: #fcd34d;
-  --color-amber-400: #fbbf24;
-  --color-amber-500: #f59e0b;
+  /* Secondary dark: #181818 */
+  --color-dark-50: #f5f5f5;
+  --color-dark-100: #ededed;
+  --color-dark-200: #d4d4d4;
+  --color-dark-300: #a3a3a3;
+  --color-dark-400: #7c7c7c;
+  --color-dark-500: #525252;
+  --color-dark-600: #3a3a3a;
+  --color-dark-700: #2a2a2a;
+  --color-dark-800: #1f1f1f;
+  --color-dark-900: #181818;
 
   /* Fonts */
   --font-heading: "Space Grotesk", sans-serif;
@@ -41,7 +39,7 @@ html {
 
 body {
   font-family: var(--font-body);
-  color: #134e4a;
+  color: #181818;
   background: #fafafa;
   transition: background-color 0.8s ease;
 }
@@ -52,17 +50,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Outline text for hero */
 .text-outline {
-  -webkit-text-stroke: 2px #134e4a;
+  -webkit-text-stroke: 2px #181818;
   color: transparent;
 }
 
-.text-outline-teal {
-  -webkit-text-stroke: 2px #0d9488;
-  color: transparent;
-}
-
-.text-outline-coral {
-  -webkit-text-stroke: 2px #f97066;
+.text-outline-brand {
+  -webkit-text-stroke: 2px #77be32;
   color: transparent;
 }
 
@@ -87,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
 .bib-number {
   font-family: var(--font-heading);
   font-weight: 700;
-  -webkit-text-stroke: 1.5px #0d948815;
+  -webkit-text-stroke: 1.5px #77be3212;
   color: transparent;
   user-select: none;
   pointer-events: none;

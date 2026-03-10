@@ -16,8 +16,8 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24"
     >
-      {/* Subtle bg gradient that hints at the swim phase */}
-      <div className="absolute inset-0 bg-gradient-to-b from-teal-50/50 via-white to-white" />
+      {/* Subtle bg */}
+      <div className="absolute inset-0 bg-gradient-to-b from-brand-50/40 via-white to-white" />
 
       <div ref={containerRef} className="relative z-10 text-center px-6">
         {/* Typographic explosion */}
@@ -31,13 +31,13 @@ export default function Hero() {
           <div className="text-outline text-7xl sm:text-8xl md:text-[10rem] lg:text-[12rem] font-bold tracking-tighter -mt-2 md:-mt-6">
             RUN
           </div>
-          <div className="text-7xl sm:text-8xl md:text-[10rem] lg:text-[12rem] font-bold tracking-tighter -mt-2 md:-mt-6 text-teal-900">
-            THRIVE<span className="text-coral-400">.</span>
+          <div className="text-7xl sm:text-8xl md:text-[10rem] lg:text-[12rem] font-bold tracking-tighter -mt-2 md:-mt-6 text-dark-900">
+            THRIVE<span className="text-brand-500">.</span>
           </div>
         </div>
 
         {/* Tagline */}
-        <p className="mt-8 md:mt-12 font-[family-name:var(--font-mono)] text-xs md:text-sm tracking-widest uppercase text-teal-600">
+        <p className="mt-8 md:mt-12 font-[family-name:var(--font-mono)] text-xs md:text-sm tracking-widest uppercase text-dark-400">
           Flowers don&apos;t compete — they just thrive. So can you.
         </p>
 
@@ -45,7 +45,7 @@ export default function Hero() {
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <a
             href="#mission"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-teal-900 text-white font-[family-name:var(--font-mono)] text-xs font-bold uppercase tracking-widest rounded-full hover:bg-coral-400 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-brand-500 text-white font-[family-name:var(--font-mono)] text-xs font-bold uppercase tracking-widest rounded-full hover:bg-dark-900 transition-colors"
           >
             Start the race
             <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2">
@@ -55,7 +55,7 @@ export default function Hero() {
         </div>
 
         {/* Scroll hint */}
-        <div className="mt-16 flex flex-col items-center gap-2 text-teal-300">
+        <div className="mt-16 flex flex-col items-center gap-2 text-dark-300">
           <span className="font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-widest">
             Scroll
           </span>

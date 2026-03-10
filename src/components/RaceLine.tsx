@@ -47,10 +47,10 @@ export default function RaceLine() {
            C200 1550 600 1600 600 1700
            C600 1800 400 1850 400 1950
            L400 5000"
-        stroke="url(#routeGradient)"
+        stroke="#77be32"
         strokeWidth="3"
         strokeLinecap="round"
-        opacity="0.4"
+        opacity="0.35"
       />
       {/* Faint dotted guide */}
       <path
@@ -64,19 +64,10 @@ export default function RaceLine() {
            C200 1550 600 1600 600 1700
            C600 1800 400 1850 400 1950
            L400 5000"
-        stroke="#0d948810"
+        stroke="#18181810"
         strokeWidth="1.5"
         strokeDasharray="8 8"
       />
-      <defs>
-        <linearGradient id="routeGradient" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#0d9488" />
-          <stop offset="35%" stopColor="#14b8a6" />
-          <stop offset="55%" stopColor="#fbbf24" />
-          <stop offset="75%" stopColor="#f97066" />
-          <stop offset="100%" stopColor="#0d9488" />
-        </linearGradient>
-      </defs>
     </svg>
   );
 }

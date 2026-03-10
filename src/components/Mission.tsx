@@ -9,7 +9,7 @@ const disciplines = [
     description:
       "Group training and mutual support. Together we push further than we ever could alone. Dive in — the water is warm.",
     images: ["Training sessions", "Open water swims", "Group meetups", "Recovery days", "Race support"],
-    accent: "teal",
+    accent: "brand",
   },
   {
     title: "Learning",
@@ -17,7 +17,7 @@ const disciplines = [
     description:
       "Shared coaching from experienced athletes. Nutrition, technique, cadence — every kilometre teaches something new.",
     images: ["Cycling clinics", "Nutrition plans", "Bike fitting", "Hill training", "Indoor sessions"],
-    accent: "amber",
+    accent: "dark",
   },
   {
     title: "Inspiration",
@@ -25,7 +25,7 @@ const disciplines = [
     description:
       "Inclusive goal-setting across all levels. Your personal best is the only podium that matters. Lace up and go.",
     images: ["5K to marathon", "Trail running", "Speed work", "Race day", "Personal records"],
-    accent: "coral",
+    accent: "brand",
   },
 ];
 
@@ -56,9 +56,8 @@ function ScrollStrip({
   }, []);
 
   const colorMap: Record<string, string> = {
-    teal: "bg-teal-100 text-teal-700 border-teal-200",
-    amber: "bg-amber-50 text-amber-700 border-amber-200",
-    coral: "bg-coral-50 text-coral-600 border-coral-200",
+    brand: "bg-brand-50 text-brand-700 border-brand-200",
+    dark: "bg-dark-50 text-dark-600 border-dark-200",
   };
 
   return (
@@ -66,7 +65,6 @@ function ScrollStrip({
       ref={stripRef}
       className="scroll-strip flex gap-3 overflow-x-hidden py-2"
     >
-      {/* Duplicate for seamless loop */}
       {[...items, ...items].map((item, i) => (
         <div
           key={i}
@@ -89,10 +87,10 @@ export default function Mission() {
 
       <div className="relative z-10 mx-auto max-w-6xl px-6">
         <div className="text-center mb-20">
-          <p className="font-[family-name:var(--font-mono)] text-[10px] font-bold uppercase tracking-[0.3em] text-coral-400 mb-3">
+          <p className="font-[family-name:var(--font-mono)] text-[10px] font-bold uppercase tracking-[0.3em] text-brand-500 mb-3">
             Three Disciplines
           </p>
-          <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-5xl font-bold text-teal-900">
+          <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-5xl font-bold text-dark-900">
             One Community
           </h2>
         </div>
@@ -108,21 +106,13 @@ export default function Mission() {
             >
               {/* Text side */}
               <div className="flex-1 max-w-md">
-                <span
-                  className={`font-[family-name:var(--font-mono)] text-[10px] font-bold uppercase tracking-[0.3em] ${
-                    d.accent === "teal"
-                      ? "text-teal-500"
-                      : d.accent === "amber"
-                        ? "text-amber-500"
-                        : "text-coral-400"
-                  }`}
-                >
+                <span className="font-[family-name:var(--font-mono)] text-[10px] font-bold uppercase tracking-[0.3em] text-brand-500">
                   {d.subtitle}
                 </span>
-                <h3 className="font-[family-name:var(--font-heading)] text-2xl md:text-4xl font-bold text-teal-900 mt-2">
+                <h3 className="font-[family-name:var(--font-heading)] text-2xl md:text-4xl font-bold text-dark-900 mt-2">
                   {d.title}
                 </h3>
-                <p className="mt-4 text-teal-700/70 leading-relaxed">
+                <p className="mt-4 text-dark-400 leading-relaxed">
                   {d.description}
                 </p>
               </div>

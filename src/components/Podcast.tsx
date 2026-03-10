@@ -1,75 +1,105 @@
+"use client";
+
+function EqualizerBars() {
+  const bars = 24;
+  return (
+    <div className="flex items-end gap-[3px] h-32 group cursor-pointer">
+      {Array.from({ length: bars }).map((_, i) => (
+        <div
+          key={i}
+          className="eq-bar w-2 bg-teal-400/60 group-hover:bg-coral-400/60 rounded-full transition-colors duration-300"
+          style={{
+            animationDelay: `${i * 0.08}s`,
+            animationDuration: `${0.8 + Math.random() * 0.8}s`,
+            height: `${20 + Math.random() * 60}%`,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+const episodes = [
+  {
+    number: "001",
+    title: "Why We Started Tri2Thrive",
+    duration: "42 min",
+  },
+  {
+    number: "002",
+    title: "Open Water Swimming — Fears & Freedoms",
+    duration: "38 min",
+  },
+  {
+    number: "003",
+    title: "Nutrition for the Long Ride",
+    duration: "51 min",
+  },
+];
+
 export default function Podcast() {
   return (
-    <section
-      id="podcast"
-      className="relative py-24 md:py-32 bg-teal-900 text-white overflow-hidden"
-    >
-      {/* Waveform decoration */}
-      <svg
-        className="absolute inset-0 w-full h-full opacity-5"
-        viewBox="0 0 1200 400"
-        preserveAspectRatio="none"
-      >
-        {Array.from({ length: 60 }).map((_, i) => (
-          <rect
-            key={i}
-            x={i * 20}
-            y={200 - Math.sin(i * 0.5) * 80 - Math.random() * 40}
-            width="8"
-            height={Math.sin(i * 0.5) * 160 + Math.random() * 80 + 20}
-            rx="4"
-            fill="white"
-          />
-        ))}
-      </svg>
+    <section id="podcast" className="relative py-24 md:py-32 bg-teal-900 text-white">
+      {/* Bib number watermark */}
+      <div className="absolute top-8 left-8 font-[family-name:var(--font-heading)] text-[12rem] md:text-[20rem] leading-none font-bold text-white/[0.03] select-none pointer-events-none">
+        04
+      </div>
 
-      <div className="relative mx-auto max-w-7xl px-6">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 mx-auto max-w-5xl px-6">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          {/* Left — Info & equalizer */}
           <div>
-            <p className="text-sm font-[family-name:var(--font-mono)] font-bold uppercase tracking-widest text-coral-400 mb-3">
+            <p className="font-[family-name:var(--font-mono)] text-[10px] font-bold uppercase tracking-[0.3em] text-coral-400 mb-3">
               Voices of Thrive
             </p>
             <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-5xl font-bold">
               The Podcast
             </h2>
-            <p className="mt-6 text-teal-200/80 leading-relaxed max-w-md">
+            <p className="mt-6 text-teal-300/70 leading-relaxed max-w-md">
               Stories from athletes of all levels. Training tips, race-day
-              insights, nutrition deep-dives, and the mental game — every
-              episode brings you closer to your next breakthrough.
+              insights, nutrition deep-dives, and the mental game.
             </p>
-            <div className="mt-8 flex gap-4">
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-sm font-medium backdrop-blur-sm">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="w-4 h-4"
-                >
-                  <polygon points="5,3 19,12 5,21" />
-                </svg>
-                Coming Soon
-              </span>
+
+            <div className="mt-8">
+              <EqualizerBars />
             </div>
           </div>
 
-          {/* Podcast visual */}
-          <div className="flex items-center justify-center">
-            <div className="relative w-64 h-64 md:w-80 md:h-80">
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-teal-700 to-coral-400/30 rotate-6" />
-              <div className="absolute inset-0 rounded-2xl bg-teal-800 flex items-center justify-center">
+          {/* Right — Episode list */}
+          <div className="space-y-0">
+            <p className="font-[family-name:var(--font-mono)] text-[10px] font-bold uppercase tracking-widest text-teal-500 mb-4">
+              Latest Episodes
+            </p>
+            {episodes.map((ep) => (
+              <div
+                key={ep.number}
+                className="flex items-center gap-4 py-4 border-b border-teal-800 hover:border-coral-400/50 transition-colors group cursor-pointer"
+              >
+                <span className="font-[family-name:var(--font-mono)] text-xs text-teal-600 w-8">
+                  {ep.number}
+                </span>
+                <div className="flex-1">
+                  <p className="text-sm font-medium text-teal-100 group-hover:text-coral-300 transition-colors">
+                    {ep.title}
+                  </p>
+                </div>
+                <span className="font-[family-name:var(--font-mono)] text-[10px] text-teal-600">
+                  {ep.duration}
+                </span>
                 <svg
-                  viewBox="0 0 48 48"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  className="w-20 h-20 text-teal-400"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  className="text-teal-700 group-hover:text-coral-400 transition-colors"
                 >
-                  <rect x="18" y="4" width="12" height="22" rx="6" />
-                  <path d="M12 22a12 12 0 0024 0" strokeLinecap="round" />
-                  <path d="M24 34v8" strokeLinecap="round" />
-                  <path d="M18 44h12" strokeLinecap="round" />
+                  <polygon points="4,2 14,8 4,14" />
                 </svg>
               </div>
-            </div>
+            ))}
+
+            <p className="pt-6 font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-widest text-teal-500">
+              Coming soon to all platforms
+            </p>
           </div>
         </div>
       </div>

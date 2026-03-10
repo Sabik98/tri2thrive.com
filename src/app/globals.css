@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  /* Colors - Kinetic Flow palette */
+  /* Colors - Race Tape palette */
   --color-teal-50: #f0fdfa;
   --color-teal-100: #ccfbf1;
   --color-teal-200: #99f6e4;
@@ -24,31 +24,14 @@
   --color-coral-800: #9a1e17;
   --color-coral-900: #7f1f1a;
 
+  --color-amber-300: #fcd34d;
+  --color-amber-400: #fbbf24;
+  --color-amber-500: #f59e0b;
+
   /* Fonts */
   --font-heading: "Space Grotesk", sans-serif;
   --font-body: "DM Sans", sans-serif;
   --font-mono: "Space Mono", monospace;
-}
-
-/* Diagonal clip sections */
-.clip-diagonal {
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-}
-
-.clip-diagonal-reverse {
-  clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
-}
-
-/* Scroll snap container */
-.snap-container {
-  scroll-snap-type: y mandatory;
-  overflow-y: auto;
-  height: 100vh;
-}
-
-.snap-section {
-  scroll-snap-align: start;
-  min-height: 100vh;
 }
 
 /* Smooth scroll */
@@ -59,9 +42,85 @@ html {
 body {
   font-family: var(--font-body);
   color: #134e4a;
-  background: #f8fafc;
+  background: #fafafa;
+  transition: background-color 0.8s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
+}
+
+/* Outline text for hero */
+.text-outline {
+  -webkit-text-stroke: 2px #134e4a;
+  color: transparent;
+}
+
+.text-outline-teal {
+  -webkit-text-stroke: 2px #0d9488;
+  color: transparent;
+}
+
+.text-outline-coral {
+  -webkit-text-stroke: 2px #f97066;
+  color: transparent;
+}
+
+/* Ticket perforations */
+.ticket-perforation {
+  background-image: radial-gradient(circle, #fafafa 6px, transparent 6px);
+  background-size: 20px 20px;
+  background-position: -10px center;
+}
+
+/* Equalizer bars */
+@keyframes eq-bounce {
+  0%, 100% { height: 20%; }
+  50% { height: 80%; }
+}
+
+.eq-bar {
+  animation: eq-bounce 1.2s ease-in-out infinite;
+}
+
+/* Bib number watermark */
+.bib-number {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  -webkit-text-stroke: 1.5px #0d948815;
+  color: transparent;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Race route line pulse */
+@keyframes route-pulse {
+  0% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+  100% { opacity: 0.3; }
+}
+
+/* Section fade-in on scroll */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out forwards;
+}
+
+/* Horizontal scroll strip */
+.scroll-strip {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scroll-strip::-webkit-scrollbar {
+  display: none;
 }

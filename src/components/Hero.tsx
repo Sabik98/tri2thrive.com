@@ -1,93 +1,83 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
-const words = ["Swim.", "Bike.", "Run.", "Thrive."];
+import { useEffect, useRef } from "react";
 
 export default function Hero() {
-  const [currentWord, setCurrentWord] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentWord((prev) => (prev + 1) % words.length);
-    }, 2000);
-    return () => clearInterval(interval);
+    const el = containerRef.current;
+    if (!el) return;
+    el.classList.add("animate-fade-up");
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-white to-coral-50" />
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24"
+    >
+      {/* Subtle bg gradient that hints at the swim phase */}
+      <div className="absolute inset-0 bg-gradient-to-b from-teal-50/50 via-white to-white" />
 
-      {/* Decorative blob */}
-      <svg
-        className="absolute -top-32 -right-32 w-[600px] h-[600px] opacity-20"
-        viewBox="0 0 600 600"
-      >
-        <path
-          d="M300,520C390,520 480,460 520,370C560,280 560,180 510,110C460,40 370,10 280,30C190,50 120,120 80,200C40,280 40,380 90,450C140,520 210,520 300,520Z"
-          fill="#0d9488"
-        />
-      </svg>
-
-      <svg
-        className="absolute -bottom-20 -left-20 w-[400px] h-[400px] opacity-15"
-        viewBox="0 0 400 400"
-      >
-        <path
-          d="M200,350C260,350 320,310 350,250C380,190 370,120 330,70C290,20 230,0 170,20C110,40 70,90 50,150C30,210 40,280 80,320C120,360 150,350 200,350Z"
-          fill="#f97066"
-        />
-      </svg>
-
-      <div className="relative mx-auto max-w-7xl w-full px-6 grid md:grid-cols-2 gap-12 items-center pt-24">
-        {/* Left — Text */}
-        <div>
-          <p className="text-sm font-[family-name:var(--font-mono)] font-bold uppercase tracking-widest text-teal-600 mb-4">
-            Flowers don&apos;t compete
-          </p>
-          <h1 className="font-[family-name:var(--font-heading)] text-5xl md:text-7xl font-bold leading-tight text-teal-900">
-            They just{" "}
-            <span
-              key={currentWord}
-              className="inline-block text-coral-400 transition-all duration-500"
-            >
-              {words[currentWord]}
-            </span>
-          </h1>
-          <p className="mt-6 text-lg text-teal-700/80 max-w-md leading-relaxed">
-            A community-driven platform for inclusive athletic growth. Train
-            together, learn together, thrive together.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a
-              href="#mission"
-              className="inline-flex items-center px-6 py-3 bg-teal-600 text-white font-[family-name:var(--font-heading)] font-medium rounded-full hover:bg-teal-700 transition-colors"
-            >
-              Discover More
-            </a>
-            <a
-              href="#workshops"
-              className="inline-flex items-center px-6 py-3 border-2 border-teal-600 text-teal-600 font-[family-name:var(--font-heading)] font-medium rounded-full hover:bg-teal-50 transition-colors"
-            >
-              Our Workshops
-            </a>
+      <div ref={containerRef} className="relative z-10 text-center px-6">
+        {/* Typographic explosion */}
+        <div className="font-[family-name:var(--font-heading)] leading-none select-none">
+          <div className="text-outline text-7xl sm:text-8xl md:text-[10rem] lg:text-[12rem] font-bold tracking-tighter">
+            SWIM
+          </div>
+          <div className="text-outline text-7xl sm:text-8xl md:text-[10rem] lg:text-[12rem] font-bold tracking-tighter -mt-2 md:-mt-6">
+            BIKE
+          </div>
+          <div className="text-outline text-7xl sm:text-8xl md:text-[10rem] lg:text-[12rem] font-bold tracking-tighter -mt-2 md:-mt-6">
+            RUN
+          </div>
+          <div className="text-7xl sm:text-8xl md:text-[10rem] lg:text-[12rem] font-bold tracking-tighter -mt-2 md:-mt-6 text-teal-900">
+            THRIVE<span className="text-coral-400">.</span>
           </div>
         </div>
 
-        {/* Right — Visual placeholder */}
-        <div className="relative flex items-center justify-center">
-          <div className="w-80 h-80 md:w-96 md:h-96 rounded-full bg-gradient-to-br from-teal-200 to-coral-200 opacity-60" />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="font-[family-name:var(--font-heading)] text-6xl md:text-8xl font-bold text-teal-900/20 select-none">
-              T2T
-            </span>
-          </div>
+        {/* Tagline */}
+        <p className="mt-8 md:mt-12 font-[family-name:var(--font-mono)] text-xs md:text-sm tracking-widest uppercase text-teal-600">
+          Flowers don&apos;t compete — they just thrive. So can you.
+        </p>
+
+        {/* CTA */}
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <a
+            href="#mission"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-teal-900 text-white font-[family-name:var(--font-mono)] text-xs font-bold uppercase tracking-widest rounded-full hover:bg-coral-400 transition-colors"
+          >
+            Start the race
+            <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M4 8h8M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
+        </div>
+
+        {/* Scroll hint */}
+        <div className="mt-16 flex flex-col items-center gap-2 text-teal-300">
+          <span className="font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-widest">
+            Scroll
+          </span>
+          <svg width="16" height="24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <rect x="3" y="1" width="10" height="18" rx="5" />
+            <line x1="8" y1="6" x2="8" y2="10" strokeLinecap="round">
+              <animate
+                attributeName="y1"
+                values="5;8;5"
+                dur="1.5s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y2"
+                values="9;12;9"
+                dur="1.5s"
+                repeatCount="indefinite"
+              />
+            </line>
+          </svg>
         </div>
       </div>
-
-      {/* Diagonal bottom edge */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-white clip-diagonal-reverse" />
     </section>
   );
 }

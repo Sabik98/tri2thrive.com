@@ -4,8 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 
 const navLinks = [
-  { href: "#mission", label: "Our Mission" },
-  { href: "#founders", label: "Who We Are" },
+  { href: "#mission", label: "Mission" },
+  { href: "#founders", label: "Team" },
   { href: "#workshops", label: "Workshops" },
   { href: "#podcast", label: "Podcast" },
 ];
@@ -14,13 +14,13 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-teal-100">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-teal-100">
       <div className="mx-auto max-w-7xl flex items-center justify-between px-6 py-4">
         <Link
           href="/"
-          className="font-[family-name:var(--font-heading)] text-xl font-bold tracking-tight text-teal-900"
+          className="font-[family-name:var(--font-heading)] text-lg font-bold tracking-tight text-teal-900"
         >
-          tri2thrive
+          tri<span className="text-coral-400">2</span>thrive
         </Link>
 
         {/* Desktop nav */}
@@ -29,7 +29,7 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-teal-800 hover:text-coral-400 transition-colors"
+              className="font-[family-name:var(--font-mono)] text-[11px] font-bold uppercase tracking-widest text-teal-700 hover:text-coral-400 transition-colors"
             >
               {link.label}
             </a>
@@ -73,7 +73,7 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="block py-2 text-sm font-medium text-teal-800 hover:text-coral-400 transition-colors"
+              className="block py-2 font-[family-name:var(--font-mono)] text-xs font-bold uppercase tracking-widest text-teal-700 hover:text-coral-400 transition-colors"
               onClick={() => setMenuOpen(false)}
             >
               {link.label}

@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors - Kinetic Flow palette */
+  --color-teal-50: #f0fdfa;
+  --color-teal-100: #ccfbf1;
+  --color-teal-200: #99f6e4;
+  --color-teal-300: #5eead4;
+  --color-teal-400: #2dd4bf;
+  --color-teal-500: #14b8a6;
+  --color-teal-600: #0d9488;
+  --color-teal-700: #0f766e;
+  --color-teal-800: #115e59;
+  --color-teal-900: #134e4a;
+
+  --color-coral-50: #fff1f0;
+  --color-coral-100: #ffe4e1;
+  --color-coral-200: #fecdc8;
+  --color-coral-300: #fda9a1;
+  --color-coral-400: #f97066;
+  --color-coral-500: #f04438;
+  --color-coral-600: #de3024;
+  --color-coral-700: #bb1f17;
+  --color-coral-800: #9a1e17;
+  --color-coral-900: #7f1f1a;
+
+  /* Fonts */
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+  --font-mono: "Space Mono", monospace;
+}
+
+/* Diagonal clip sections */
+.clip-diagonal {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.clip-diagonal-reverse {
+  clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
+}
+
+/* Scroll snap container */
+.snap-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.snap-section {
+  scroll-snap-align: start;
+  min-height: 100vh;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: #134e4a;
+  background: #f8fafc;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}

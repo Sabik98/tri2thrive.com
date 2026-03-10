@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "Bash(du -sh /Users/ivan/Downloads/claude-projects/-tri2thrive.com && find /Users/ivan/Downloads/claude-projects/-tri2thrive.com -type f ! -path '*/\\\\.git/*' 2>/dev/null | wc -l)",
+      "WebFetch(domain:tri2thrive.com)",
+      "Bash(git stash:*)",
+      "Bash(node --version && npm --version)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm)",
+      "Bash(mkdir /tmp/tri2thrive-init && npx create-next-app@latest /tmp/tri2thrive-init --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm)",
+      "Bash(rm -rf /tmp/tri2thrive-init && npx create-next-app@latest /tmp/tri2thrive-init --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --turbopack 2>&1 | cat)",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(npx tailwindcss:*)",
+      "Bash(npm ls:*)",
+      "Bash(npm run:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

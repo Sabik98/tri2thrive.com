@@ -7,8 +7,7 @@ const workshops = [
     location: "Kraków, PL",
     description:
       "Master your technique in the water with personalized coaching from one of Poland's finest swimmers.",
-    tag: "FEATURED",
-    tagColor: "bg-brand-500 text-white",
+    featured: true,
   },
   {
     title: "Cycling Fundamentals",
@@ -18,8 +17,7 @@ const workshops = [
     location: "Kraków, PL",
     description:
       "Build endurance, improve cadence, and learn nutrition strategies for long-distance rides.",
-    tag: "COMING SOON",
-    tagColor: "bg-dark-100 text-dark-600",
+    featured: false,
   },
   {
     title: "Transition Training",
@@ -29,77 +27,48 @@ const workshops = [
     location: "Kraków, PL",
     description:
       "Nail your T1 and T2 transitions. Shave minutes off your race with proven techniques.",
-    tag: "COMING SOON",
-    tagColor: "bg-dark-100 text-dark-600",
+    featured: false,
   },
 ];
 
-function TicketStub({
-  workshop,
-}: {
-  workshop: (typeof workshops)[number];
-}) {
+function TicketStub({ workshop }: { workshop: (typeof workshops)[number] }) {
   return (
-    <div className="group relative">
-      <div className="flex flex-col sm:flex-row bg-white border border-dark-100 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
-        {/* Left side — main info */}
-        <div className="flex-1 p-6">
-          <span
-            className={`inline-block px-2 py-0.5 text-[9px] font-[family-name:var(--font-mono)] font-bold tracking-widest rounded ${workshop.tagColor}`}
-          >
-            {workshop.tag}
+    <div className="flex flex-col sm:flex-row bg-white rounded-2xl border border-dark-100 overflow-hidden hover:shadow-md transition-shadow duration-300">
+      {/* Main info */}
+      <div className="flex-1 p-6">
+        {workshop.featured && (
+          <span className="inline-block px-3 py-1 text-[10px] font-bold uppercase tracking-wider bg-brand-500 text-white rounded-full mb-3">
+            Featured
           </span>
-          <h3 className="font-[family-name:var(--font-heading)] text-lg font-bold text-dark-900 mt-3">
-            {workshop.title}
-          </h3>
-          <p className="text-sm text-dark-400 mt-2 leading-relaxed">
-            {workshop.description}
-          </p>
-        </div>
+        )}
+        {!workshop.featured && (
+          <span className="inline-block px-3 py-1 text-[10px] font-bold uppercase tracking-wider bg-dark-50 text-dark-400 rounded-full mb-3">
+            Coming Soon
+          </span>
+        )}
+        <h3 className="font-[family-name:var(--font-heading)] text-lg font-bold text-dark-900">
+          {workshop.title}
+        </h3>
+        <p className="text-sm text-dark-400 mt-2 leading-relaxed">
+          {workshop.description}
+        </p>
+      </div>
 
-        {/* Perforation line */}
-        <div className="hidden sm:flex flex-col items-center justify-center w-0">
-          <div className="h-full border-l-2 border-dashed border-dark-100" />
-        </div>
-        <div className="sm:hidden border-t-2 border-dashed border-dark-100" />
+      {/* Dashed separator */}
+      <div className="hidden sm:block w-px border-l-2 border-dashed border-dark-100 my-4" />
+      <div className="sm:hidden border-t-2 border-dashed border-dark-100 mx-6" />
 
-        {/* Right side — ticket stub */}
-        <div className="sm:w-48 p-6 flex flex-col justify-center items-start sm:items-center bg-brand-50/30">
-          <p className="font-[family-name:var(--font-heading)] text-sm font-bold text-dark-900">
-            {workshop.instructor}
-          </p>
-          <p className="font-[family-name:var(--font-mono)] text-[9px] uppercase tracking-widest text-brand-600 mt-1">
-            {workshop.credential}
-          </p>
-          <div className="mt-4 space-y-1">
-            <p className="font-[family-name:var(--font-mono)] text-[10px] text-dark-400 flex items-center gap-1">
-              <svg
-                width="10"
-                height="10"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              >
-                <rect x="1" y="1" width="8" height="8" rx="1" />
-                <line x1="3" y1="0" x2="3" y2="2" />
-                <line x1="7" y1="0" x2="7" y2="2" />
-              </svg>
-              {workshop.date}
-            </p>
-            <p className="font-[family-name:var(--font-mono)] text-[10px] text-dark-400 flex items-center gap-1">
-              <svg
-                width="10"
-                height="10"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              >
-                <circle cx="5" cy="4" r="2" />
-                <path d="M5 6v3" />
-              </svg>
-              {workshop.location}
-            </p>
-          </div>
+      {/* Stub */}
+      <div className="sm:w-44 p-6 flex flex-col justify-center bg-dark-50/50">
+        <p className="font-[family-name:var(--font-heading)] text-sm font-bold text-dark-900">
+          {workshop.instructor}
+        </p>
+        <p className="text-xs text-brand-500 font-medium mt-0.5">
+          {workshop.credential}
+        </p>
+        <div className="mt-3 space-y-1 text-xs text-dark-400">
+          <p>{workshop.date}</p>
+          <p>{workshop.location}</p>
         </div>
       </div>
     </div>
@@ -108,27 +77,30 @@ function TicketStub({
 
 export default function Workshops() {
   return (
-    <section id="workshops" className="relative py-24 md:py-32">
-      {/* Bib number watermark */}
-      <div className="absolute top-8 right-8 bib-number text-[12rem] md:text-[20rem] leading-none">
-        03
-      </div>
-
-      <div className="relative z-10 mx-auto max-w-3xl px-6">
+    <section id="workshops" className="py-24 md:py-32 bg-dark-50">
+      <div className="mx-auto max-w-3xl px-6">
         <div className="text-center mb-16">
-          <p className="font-[family-name:var(--font-mono)] text-[10px] font-bold uppercase tracking-[0.3em] text-brand-500 mb-3">
-            Train Together
-          </p>
-          <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-5xl font-bold text-dark-900">
+          <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl font-bold text-dark-900">
             Workshops
           </h2>
+          <p className="mt-4 text-dark-400 max-w-lg mx-auto">
+            Train with experienced athletes and coaches.
+          </p>
         </div>
 
-        {/* Ticket stubs */}
-        <div className="space-y-6">
+        <div className="space-y-5">
           {workshops.map((ws) => (
             <TicketStub key={ws.title} workshop={ws} />
           ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <a
+            href="#"
+            className="px-8 py-3 bg-brand-500 text-white font-medium rounded-lg hover:bg-dark-900 transition-colors inline-block"
+          >
+            See more
+          </a>
         </div>
       </div>
     </section>

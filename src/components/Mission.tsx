@@ -1,126 +1,75 @@
-"use client";
-
-import { useEffect, useRef } from "react";
-
-const disciplines = [
+const pillars = [
   {
     title: "Community",
-    subtitle: "SWIM",
     description:
-      "Group training and mutual support. Together we push further than we ever could alone. Dive in — the water is warm.",
-    images: ["Training sessions", "Open water swims", "Group meetups", "Recovery days", "Race support"],
-    accent: "brand",
+      "Group training sessions and mutual support. Together we push further than we ever could alone.",
+    icon: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-10 h-10">
+        <circle cx="24" cy="14" r="6" />
+        <circle cx="10" cy="20" r="5" />
+        <circle cx="38" cy="20" r="5" />
+        <path d="M16 34c0-4.4 3.6-8 8-8s8 3.6 8 8" strokeLinecap="round" />
+        <path d="M4 38c0-3.3 2.7-6 6-6h2" strokeLinecap="round" />
+        <path d="M44 38c0-3.3-2.7-6-6-6h-2" strokeLinecap="round" />
+      </svg>
+    ),
   },
   {
     title: "Learning",
-    subtitle: "BIKE",
     description:
-      "Shared coaching from experienced athletes. Nutrition, technique, cadence — every kilometre teaches something new.",
-    images: ["Cycling clinics", "Nutrition plans", "Bike fitting", "Hill training", "Indoor sessions"],
-    accent: "dark",
+      "Shared coaching knowledge from experienced athletes. Every race teaches something new.",
+    icon: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-10 h-10">
+        <path d="M8 38V14l16-8 16 8v24" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M24 6v16" strokeLinecap="round" />
+        <path d="M14 22v10" strokeLinecap="round" />
+        <path d="M34 22v10" strokeLinecap="round" />
+        <circle cx="24" cy="34" r="4" />
+      </svg>
+    ),
   },
   {
     title: "Inspiration",
-    subtitle: "RUN",
     description:
-      "Inclusive goal-setting across all levels. Your personal best is the only podium that matters. Lace up and go.",
-    images: ["5K to marathon", "Trail running", "Speed work", "Race day", "Personal records"],
-    accent: "brand",
+      "Inclusive goal-setting across all fitness levels. Your personal best is the only podium that matters.",
+    icon: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-10 h-10">
+        <path d="M24 4l4 8 9 1.3-6.5 6.3L32 29 24 24.8 16 29l1.5-9.4L11 13.3l9-1.3z" strokeLinejoin="round" />
+        <path d="M12 38h24" strokeLinecap="round" />
+        <path d="M16 44h16" strokeLinecap="round" />
+      </svg>
+    ),
   },
 ];
 
-function ScrollStrip({
-  items,
-  accent,
-}: {
-  items: string[];
-  accent: string;
-}) {
-  const stripRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const strip = stripRef.current;
-    if (!strip) return;
-
-    let animId: number;
-    let pos = 0;
-
-    const animate = () => {
-      pos += 0.5;
-      if (pos >= strip.scrollWidth / 2) pos = 0;
-      strip.scrollLeft = pos;
-      animId = requestAnimationFrame(animate);
-    };
-    animId = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animId);
-  }, []);
-
-  const colorMap: Record<string, string> = {
-    brand: "bg-brand-50 text-brand-700 border-brand-200",
-    dark: "bg-dark-50 text-dark-600 border-dark-200",
-  };
-
-  return (
-    <div
-      ref={stripRef}
-      className="scroll-strip flex gap-3 overflow-x-hidden py-2"
-    >
-      {[...items, ...items].map((item, i) => (
-        <div
-          key={i}
-          className={`shrink-0 px-4 py-2 rounded-lg border text-xs font-[family-name:var(--font-mono)] font-bold uppercase tracking-wider whitespace-nowrap ${colorMap[accent]}`}
-        >
-          {item}
-        </div>
-      ))}
-    </div>
-  );
-}
-
 export default function Mission() {
   return (
-    <section id="mission" className="relative py-24 md:py-32">
-      {/* Bib number watermark */}
-      <div className="absolute top-8 right-8 bib-number text-[12rem] md:text-[20rem] leading-none">
-        01
-      </div>
-
-      <div className="relative z-10 mx-auto max-w-6xl px-6">
-        <div className="text-center mb-20">
-          <p className="font-[family-name:var(--font-mono)] text-[10px] font-bold uppercase tracking-[0.3em] text-brand-500 mb-3">
-            Three Disciplines
-          </p>
-          <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-5xl font-bold text-dark-900">
-            One Community
+    <section id="mission" className="py-24 md:py-32 bg-dark-50">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="text-center mb-16">
+          <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl font-bold text-dark-900">
+            Our Mission
           </h2>
+          <p className="mt-4 text-dark-400 max-w-lg mx-auto">
+            Three pillars that drive everything we do.
+          </p>
         </div>
 
-        {/* Ribbon layout — alternating left/right */}
-        <div className="space-y-20 md:space-y-28">
-          {disciplines.map((d, i) => (
+        <div className="grid md:grid-cols-3 gap-8">
+          {pillars.map((pillar) => (
             <div
-              key={d.title}
-              className={`flex flex-col ${
-                i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              } gap-8 md:gap-16 items-center`}
+              key={pillar.title}
+              className="bg-white rounded-2xl p-8 text-center hover:shadow-md transition-shadow duration-300"
             >
-              {/* Text side */}
-              <div className="flex-1 max-w-md">
-                <span className="font-[family-name:var(--font-mono)] text-[10px] font-bold uppercase tracking-[0.3em] text-brand-500">
-                  {d.subtitle}
-                </span>
-                <h3 className="font-[family-name:var(--font-heading)] text-2xl md:text-4xl font-bold text-dark-900 mt-2">
-                  {d.title}
-                </h3>
-                <p className="mt-4 text-dark-400 leading-relaxed">
-                  {d.description}
-                </p>
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-50 text-brand-500 mb-6">
+                {pillar.icon}
               </div>
-
-              {/* Horizontal scroll strip */}
-              <div className="flex-1 w-full max-w-md">
-                <ScrollStrip items={d.images} accent={d.accent} />
-              </div>
+              <h3 className="font-[family-name:var(--font-heading)] text-xl font-bold text-dark-900 mb-3">
+                {pillar.title}
+              </h3>
+              <p className="text-dark-400 leading-relaxed text-sm">
+                {pillar.description}
+              </p>
             </div>
           ))}
         </div>

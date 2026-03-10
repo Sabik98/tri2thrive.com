@@ -4,8 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 
 const navLinks = [
-  { href: "#mission", label: "Mission" },
-  { href: "#founders", label: "Team" },
+  { href: "#mission", label: "Our Mission" },
+  { href: "#founders", label: "Who are we?" },
   { href: "#workshops", label: "Workshops" },
   { href: "#podcast", label: "Podcast" },
 ];
@@ -14,11 +14,11 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-dark-100">
-      <div className="mx-auto max-w-7xl flex items-center justify-between px-6 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-dark-100">
+      <div className="mx-auto max-w-6xl flex items-center justify-between px-6 py-5">
         <Link
           href="/"
-          className="font-[family-name:var(--font-heading)] text-lg font-bold tracking-tight text-dark-900"
+          className="font-[family-name:var(--font-heading)] text-xl font-bold tracking-tight text-dark-900"
         >
           tri<span className="text-brand-500">2</span>thrive
         </Link>
@@ -29,7 +29,7 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="font-[family-name:var(--font-mono)] text-[11px] font-bold uppercase tracking-widest text-dark-400 hover:text-brand-500 transition-colors"
+              className="text-sm text-dark-400 hover:text-brand-500 transition-colors"
             >
               {link.label}
             </a>
@@ -68,12 +68,12 @@ export default function Header() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <nav className="md:hidden bg-white/95 backdrop-blur-md border-b border-dark-100 px-6 pb-4">
+        <nav className="md:hidden bg-white border-b border-dark-100 px-6 pb-4">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="block py-2 font-[family-name:var(--font-mono)] text-xs font-bold uppercase tracking-widest text-dark-400 hover:text-brand-500 transition-colors"
+              className="block py-3 text-sm text-dark-400 hover:text-brand-500 transition-colors"
               onClick={() => setMenuOpen(false)}
             >
               {link.label}

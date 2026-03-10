@@ -2,7 +2,6 @@
 
 @theme {
   /* Brand colors from tri2thrive.com */
-  /* Primary green: #77be32 */
   --color-brand-50: #f4fbea;
   --color-brand-100: #e6f5d0;
   --color-brand-200: #ceeba6;
@@ -14,8 +13,7 @@
   --color-brand-800: #385b1d;
   --color-brand-900: #304d1c;
 
-  /* Secondary dark: #181818 */
-  --color-dark-50: #f5f5f5;
+  --color-dark-50: #f7f7f7;
   --color-dark-100: #ededed;
   --color-dark-200: #d4d4d4;
   --color-dark-300: #a3a3a3;
@@ -32,7 +30,6 @@
   --font-mono: "Space Mono", monospace;
 }
 
-/* Smooth scroll */
 html {
   scroll-behavior: smooth;
 }
@@ -40,33 +37,14 @@ html {
 body {
   font-family: var(--font-body);
   color: #181818;
-  background: #fafafa;
-  transition: background-color 0.8s ease;
+  background: #ffffff;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
 }
 
-/* Outline text for hero */
-.text-outline {
-  -webkit-text-stroke: 2px #181818;
-  color: transparent;
-}
-
-.text-outline-brand {
-  -webkit-text-stroke: 2px #77be32;
-  color: transparent;
-}
-
-/* Ticket perforations */
-.ticket-perforation {
-  background-image: radial-gradient(circle, #fafafa 6px, transparent 6px);
-  background-size: 20px 20px;
-  background-position: -10px center;
-}
-
-/* Equalizer bars */
+/* Equalizer bars — kept for podcast section */
 @keyframes eq-bounce {
   0%, 100% { height: 20%; }
   50% { height: 80%; }
@@ -74,46 +52,4 @@ h1, h2, h3, h4, h5, h6 {
 
 .eq-bar {
   animation: eq-bounce 1.2s ease-in-out infinite;
-}
-
-/* Bib number watermark */
-.bib-number {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  -webkit-text-stroke: 1.5px #77be3212;
-  color: transparent;
-  user-select: none;
-  pointer-events: none;
-}
-
-/* Race route line pulse */
-@keyframes route-pulse {
-  0% { opacity: 0.3; }
-  50% { opacity: 0.7; }
-  100% { opacity: 0.3; }
-}
-
-/* Section fade-in on scroll */
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-up {
-  animation: fade-up 0.6s ease-out forwards;
-}
-
-/* Horizontal scroll strip */
-.scroll-strip {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-.scroll-strip::-webkit-scrollbar {
-  display: none;
 }

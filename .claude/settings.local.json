@@ -14,7 +14,11 @@
       "Bash(npx tailwindcss:*)",
       "Bash(npm ls:*)",
       "Bash(npm run:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git branch:*)",
+      "Bash(npx vercel:*)",
+      "Bash(ls -la /Users/ivan/Downloads/claude-projects/berghaus/src/app/\\\\[locale\\\\]/ | grep \"page.tsx\")"
     ]
   }
 }

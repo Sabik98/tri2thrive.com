@@ -1,28 +1,39 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand colors from tri2thrive.com */
-  --color-brand-50: #f4fbea;
-  --color-brand-100: #e6f5d0;
-  --color-brand-200: #ceeba6;
-  --color-brand-300: #aedc72;
-  --color-brand-400: #91cd48;
-  --color-brand-500: #77be32;
-  --color-brand-600: #589722;
-  --color-brand-700: #44731e;
-  --color-brand-800: #385b1d;
-  --color-brand-900: #304d1c;
+  /* Primary: #002D48 (deep navy) */
+  --color-primary-50: #e6f0f7;
+  --color-primary-100: #b3d1e6;
+  --color-primary-200: #80b2d4;
+  --color-primary-300: #4d93c3;
+  --color-primary-400: #1a74b1;
+  --color-primary-500: #00558a;
+  --color-primary-600: #004470;
+  --color-primary-700: #003a5f;
+  --color-primary-800: #002D48;
+  --color-primary-900: #001e30;
 
-  --color-dark-50: #f7f7f7;
-  --color-dark-100: #ededed;
-  --color-dark-200: #d4d4d4;
-  --color-dark-300: #a3a3a3;
-  --color-dark-400: #7c7c7c;
-  --color-dark-500: #525252;
-  --color-dark-600: #3a3a3a;
-  --color-dark-700: #2a2a2a;
-  --color-dark-800: #1f1f1f;
-  --color-dark-900: #181818;
+  /* Secondary: #880020 (deep burgundy) */
+  --color-secondary-50: #fce8ec;
+  --color-secondary-100: #f5b8c4;
+  --color-secondary-200: #ee889c;
+  --color-secondary-300: #e75874;
+  --color-secondary-400: #c0334e;
+  --color-secondary-500: #a10028;
+  --color-secondary-600: #880020;
+  --color-secondary-700: #6e001a;
+  --color-secondary-800: #540013;
+  --color-secondary-900: #3a000d;
+
+  /* Neutrals */
+  --color-neutral-50: #f8f9fa;
+  --color-neutral-100: #f1f3f5;
+  --color-neutral-200: #dee2e6;
+  --color-neutral-300: #adb5bd;
+  --color-neutral-400: #868e96;
+  --color-neutral-500: #495057;
+  --color-neutral-600: #343a40;
+  --color-neutral-700: #212529;
 
   /* Fonts */
   --font-heading: "Space Grotesk", sans-serif;
@@ -36,7 +47,7 @@ html {
 
 body {
   font-family: var(--font-body);
-  color: #181818;
+  color: #212529;
   background: #ffffff;
 }
 

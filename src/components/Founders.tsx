@@ -18,10 +18,10 @@ export default function Founders() {
     <section id="founders" className="py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center mb-16">
-          <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl font-bold text-dark-900">
+          <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl font-bold text-primary-800">
             Who are we?
           </h2>
-          <p className="mt-4 text-dark-400 max-w-lg mx-auto">
+          <p className="mt-4 text-neutral-400 max-w-lg mx-auto">
             The people behind the community.
           </p>
         </div>
@@ -30,11 +30,11 @@ export default function Founders() {
           {founders.map((founder) => (
             <div
               key={founder.name}
-              className="bg-white rounded-2xl border border-dark-100 overflow-hidden hover:shadow-md transition-shadow duration-300"
+              className="bg-white rounded-2xl border border-neutral-200 overflow-hidden hover:shadow-md transition-shadow duration-300"
             >
               {/* Photo placeholder */}
-              <div className="h-56 bg-gradient-to-br from-dark-50 to-dark-100 flex items-center justify-center">
-                <div className="w-24 h-24 rounded-full bg-brand-500 flex items-center justify-center">
+              <div className="h-56 bg-gradient-to-br from-primary-50 to-neutral-100 flex items-center justify-center">
+                <div className="w-24 h-24 rounded-full bg-primary-800 flex items-center justify-center">
                   <span className="font-[family-name:var(--font-heading)] text-2xl font-bold text-white">
                     {founder.initials}
                   </span>
@@ -42,13 +42,13 @@ export default function Founders() {
               </div>
 
               <div className="p-6 text-center">
-                <h3 className="font-[family-name:var(--font-heading)] text-xl font-bold text-dark-900">
+                <h3 className="font-[family-name:var(--font-heading)] text-xl font-bold text-primary-800">
                   {founder.name}
                 </h3>
-                <p className="text-sm text-brand-500 font-medium mt-1">
+                <p className="text-sm text-secondary-600 font-medium mt-1">
                   {founder.role}
                 </p>
-                <p className="mt-4 text-sm text-dark-400 leading-relaxed">
+                <p className="mt-4 text-sm text-neutral-400 leading-relaxed">
                   {founder.bio}
                 </p>
 
@@ -57,7 +57,7 @@ export default function Founders() {
                   {["Facebook", "Instagram"].map((platform) => (
                     <span
                       key={platform}
-                      className="w-9 h-9 rounded-full bg-dark-50 flex items-center justify-center text-dark-300 hover:bg-brand-500 hover:text-white transition-colors cursor-pointer"
+                      className="w-9 h-9 rounded-full bg-neutral-50 flex items-center justify-center text-neutral-300 hover:bg-secondary-600 hover:text-white transition-colors cursor-pointer"
                     >
                       <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
                         {platform === "Facebook" ? (

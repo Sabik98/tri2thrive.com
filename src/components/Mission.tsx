@@ -44,13 +44,13 @@ const pillars = [
 
 export default function Mission() {
   return (
-    <section id="mission" className="py-24 md:py-32 bg-dark-50">
+    <section id="mission" className="py-24 md:py-32 bg-neutral-50">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center mb-16">
-          <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl font-bold text-dark-900">
+          <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl font-bold text-primary-800">
             Our Mission
           </h2>
-          <p className="mt-4 text-dark-400 max-w-lg mx-auto">
+          <p className="mt-4 text-neutral-400 max-w-lg mx-auto">
             Three pillars that drive everything we do.
           </p>
         </div>
@@ -61,13 +61,13 @@ export default function Mission() {
               key={pillar.title}
               className="bg-white rounded-2xl p-8 text-center hover:shadow-md transition-shadow duration-300"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-50 text-brand-500 mb-6">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-50 text-primary-800 mb-6">
                 {pillar.icon}
               </div>
-              <h3 className="font-[family-name:var(--font-heading)] text-xl font-bold text-dark-900 mb-3">
+              <h3 className="font-[family-name:var(--font-heading)] text-xl font-bold text-primary-800 mb-3">
                 {pillar.title}
               </h3>
-              <p className="text-dark-400 leading-relaxed text-sm">
+              <p className="text-neutral-400 leading-relaxed text-sm">
                 {pillar.description}
               </p>
             </div>

@@ -14,13 +14,13 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-dark-100">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-neutral-200">
       <div className="mx-auto max-w-6xl flex items-center justify-between px-6 py-5">
         <Link
           href="/"
-          className="font-[family-name:var(--font-heading)] text-xl font-bold tracking-tight text-dark-900"
+          className="font-[family-name:var(--font-heading)] text-xl font-bold tracking-tight text-primary-800"
         >
-          tri<span className="text-brand-500">2</span>thrive
+          tri<span className="text-secondary-600">2</span>thrive
         </Link>
 
         {/* Desktop nav */}
@@ -29,7 +29,7 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-dark-400 hover:text-brand-500 transition-colors"
+              className="text-sm text-neutral-400 hover:text-secondary-600 transition-colors"
             >
               {link.label}
             </a>
@@ -38,7 +38,7 @@ export default function Header() {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden p-2 text-dark-900"
+          className="md:hidden p-2 text-primary-800"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -68,12 +68,12 @@ export default function Header() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <nav className="md:hidden bg-white border-b border-dark-100 px-6 pb-4">
+        <nav className="md:hidden bg-white border-b border-neutral-200 px-6 pb-4">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="block py-3 text-sm text-dark-400 hover:text-brand-500 transition-colors"
+              className="block py-3 text-sm text-neutral-400 hover:text-secondary-600 transition-colors"
               onClick={() => setMenuOpen(false)}
             >
               {link.label}

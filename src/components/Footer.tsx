@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-dark-900 text-white">
+    <footer className="bg-primary-800 text-white">
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
@@ -11,9 +11,9 @@ export default function Footer() {
               href="/"
               className="font-[family-name:var(--font-heading)] text-xl font-bold"
             >
-              tri<span className="text-brand-500">2</span>thrive
+              tri<span className="text-secondary-600">2</span>thrive
             </Link>
-            <p className="mt-3 text-dark-500 text-sm leading-relaxed max-w-xs">
+            <p className="mt-3 text-primary-400 text-sm leading-relaxed max-w-xs">
               Flowers don&apos;t compete — they just thrive. So can you.
             </p>
           </div>
@@ -31,7 +31,7 @@ export default function Footer() {
                 <li key={item.label}>
                   <a
                     href={item.href}
-                    className="text-sm text-dark-500 hover:text-brand-500 transition-colors"
+                    className="text-sm text-primary-400 hover:text-secondary-200 transition-colors"
                   >
                     {item.label}
                   </a>
@@ -47,7 +47,7 @@ export default function Footer() {
               {["Facebook", "Instagram", "YouTube"].map((platform) => (
                 <span
                   key={platform}
-                  className="w-9 h-9 rounded-full bg-dark-800 flex items-center justify-center text-dark-500 hover:bg-brand-500 hover:text-white transition-colors cursor-pointer"
+                  className="w-9 h-9 rounded-full bg-primary-700 flex items-center justify-center text-primary-400 hover:bg-secondary-600 hover:text-white transition-colors cursor-pointer"
                 >
                   <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
                     {platform === "Facebook" ? (
@@ -66,14 +66,14 @@ export default function Footer() {
 
         {/* Tagline */}
         <div className="text-center mb-8">
-          <p className="font-[family-name:var(--font-heading)] text-lg font-bold text-dark-700">
-            Swim. Bike. Run. <span className="text-brand-500">Thrive.</span>
+          <p className="font-[family-name:var(--font-heading)] text-lg font-bold text-primary-600">
+            Swim. Bike. Run. <span className="text-secondary-600">Thrive.</span>
           </p>
         </div>
 
-        <div className="border-t border-dark-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-dark-600">
+        <div className="border-t border-primary-700 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-primary-500">
           <p>&copy; {new Date().getFullYear()} Tri2Thrive. All rights reserved.</p>
-          <a href="#" className="hover:text-brand-500 transition-colors">
+          <a href="#" className="hover:text-secondary-200 transition-colors">
             Privacy Policy
           </a>
         </div>

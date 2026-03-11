@@ -52,6 +52,22 @@ export default function Hero() {
           </a>
         </div>
       </div>
+
+      {/* Wave divider */}
+      <div className="absolute bottom-0 left-0 right-0 z-10">
+        <svg
+          viewBox="0 0 1440 120"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-auto block"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0 60C240 120 480 0 720 60C960 120 1200 0 1440 60V120H0V60Z"
+            fill="#f8f9fa"
+          />
+        </svg>
+      </div>
     </section>
   );
 }

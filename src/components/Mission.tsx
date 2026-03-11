@@ -52,12 +52,12 @@ const photos = [
 
 export default function Mission() {
   return (
-    <section id="mission" className="py-40 px-6 bg-primary-800">
+    <section id="mission" className="py-40 px-6 bg-neutral-50">
       <div className="mx-auto max-w-6xl">
-        <h2 className="text-center text-4xl md:text-5xl font-bold text-white mb-6">
+        <h2 className="text-center text-4xl md:text-5xl font-bold text-primary-800 mb-6">
           Our Mission
         </h2>
-        <p className="text-center text-primary-300 leading-relaxed max-w-2xl mx-auto mb-20 text-lg md:text-xl">
+        <p className="text-center text-neutral-400 leading-relaxed max-w-2xl mx-auto mb-20 text-lg md:text-xl">
           At Tri2Thrive, we believe sport is more than finish lines and podiums
           — it&apos;s about movement, growth, and connection.
         </p>
@@ -76,7 +76,7 @@ export default function Mission() {
                   alt=""
                   width={300}
                   height={300}
-                  className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full object-cover ring-4 ring-primary-800 shadow-xl"
+                  className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full object-cover ring-4 ring-neutral-50 shadow-xl"
                 />
               </div>
             ))}
@@ -88,15 +88,15 @@ export default function Mission() {
           {pillars.map((p) => (
             <div
               key={p.title}
-              className="bg-white/10 backdrop-blur-sm rounded-2xl p-10 text-center border border-white/10 hover:bg-white/15 transition-colors duration-300"
+              className="bg-white rounded-2xl p-10 text-center shadow-md border border-neutral-100 hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="w-18 h-18 rounded-full bg-secondary-600/20 text-[#FFE7B8] flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 rounded-full bg-primary-800/10 text-secondary-600 flex items-center justify-center mx-auto mb-6">
                 {p.icon}
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">
+              <h3 className="text-xl font-bold text-primary-800 mb-3">
                 {p.title}
               </h3>
-              <p className="text-primary-300 leading-relaxed">
+              <p className="text-neutral-400 leading-relaxed">
                 {p.text}
               </p>
             </div>

@@ -104,23 +104,6 @@ export default function Mission() {
         </div>
       </div>
 
-      {/* Chevron divider pointing into founders */}
-      <div className="relative h-20 md:h-28 -mb-1">
-        <svg
-          viewBox="0 0 1440 100"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="absolute inset-0 w-full h-full block"
-          preserveAspectRatio="none"
-        >
-          {/* Left half → navy */}
-          <polygon points="0,0 720,100 0,100" fill="#002D48" />
-          {/* Right half → burgundy */}
-          <polygon points="1440,0 720,100 1440,100" fill="#880020" />
-          {/* Top fill matching mission bg */}
-          <polygon points="0,0 1440,0 720,100" fill="#f8f9fa" />
-        </svg>
-      </div>
     </section>
   );
 }

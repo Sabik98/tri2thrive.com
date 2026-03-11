@@ -52,7 +52,7 @@ const photos = [
 
 export default function Mission() {
   return (
-    <section id="mission" className="py-40 px-6 bg-neutral-50">
+    <section id="mission" className="pt-10 pb-40 px-6 bg-neutral-50">
       <div className="mx-auto max-w-6xl">
         <h2 className="text-center text-4xl md:text-5xl font-bold text-primary-800 mb-6">
           Our Mission

@@ -20,17 +20,17 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 text-center">
         <Image
-          src="/logo/logo-white.png"
+          src="/logo/logo-cream.png"
           alt="Tri2Thrive"
           width={500}
           height={250}
-          className="mx-auto w-64 md:w-80 lg:w-96 h-auto mb-12"
+          className="mx-auto w-64 md:w-80 lg:w-96 h-auto"
           priority
         />
 
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white text-center leading-tight max-w-3xl">
           Flowers don&apos;t compete —<br />
-          they just <span className="text-secondary-200">thrive.</span>
+          they just <span className="text-[#880020]">thrive.</span>
         </h1>
 
         <p className="mt-6 text-lg md:text-xl text-white/70 text-center max-w-xl mx-auto">

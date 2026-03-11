@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 
 const workshops = [
@@ -31,78 +34,88 @@ const workshops = [
 ];
 
 export default function Workshops() {
-  return (
-    <section id="workshops" className="py-32 px-6 bg-neutral-50">
-      <div className="mx-auto max-w-5xl">
-        <h2 className="text-center text-3xl md:text-4xl font-bold text-primary-800 mb-5">
-          Workshops
-        </h2>
-        <p className="text-center text-neutral-400 leading-relaxed max-w-2xl mx-auto mb-16 text-lg">
-          Step into a space where sport meets growth. It&apos;s not about being
-          the fastest — it&apos;s about learning, sharing, and thriving together.
-        </p>
+  const [current, setCurrent] = useState(0);
+  const ws = workshops[current];
 
-        <div className="space-y-5 max-w-3xl mx-auto">
-          {workshops.map((ws) => (
-            <div
-              key={ws.title}
-              className="flex flex-col sm:flex-row bg-white rounded-2xl border border-neutral-100 overflow-hidden hover:shadow-lg transition-shadow duration-300"
-            >
-              {/* Image or placeholder */}
-              {ws.image ? (
-                <div className="sm:w-56 shrink-0">
+  const prev = () => setCurrent((c) => (c === 0 ? workshops.length - 1 : c - 1));
+  const next = () => setCurrent((c) => (c === workshops.length - 1 ? 0 : c + 1));
+
+  return (
+    <section id="workshops" className="py-32 px-6 bg-white">
+      <div className="mx-auto max-w-6xl">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+          {/* Left — Workshop carousel */}
+          <div className="flex flex-col items-center">
+            <div className="relative w-full max-w-md">
+              {/* Image */}
+              <div className="rounded-2xl overflow-hidden bg-primary-50 aspect-[4/3] flex items-center justify-center">
+                {ws.image ? (
                   <Image
                     src={ws.image}
                     alt={ws.title}
-                    width={400}
-                    height={300}
-                    className="w-full h-48 sm:h-full object-cover"
+                    width={500}
+                    height={375}
+                    className="w-full h-full object-cover"
                   />
-                </div>
-              ) : (
-                <div className="sm:w-56 shrink-0 bg-primary-50 flex items-center justify-center h-48 sm:h-auto">
-                  <span className="text-primary-200 text-4xl font-bold">
+                ) : (
+                  <span className="text-primary-200 text-6xl font-bold">
                     {ws.title.charAt(0)}
                   </span>
-                </div>
-              )}
-
-              {/* Content */}
-              <div className="flex-1 p-6 md:p-8 flex flex-col justify-center">
-                <div className="flex items-center gap-3 mb-2">
-                  <h3 className="text-lg font-bold text-primary-800">
-                    {ws.title}
-                  </h3>
-                  {ws.featured && (
-                    <span className="px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-secondary-600 text-white rounded-full">
-                      Featured
-                    </span>
-                  )}
-                  {!ws.featured && (
-                    <span className="px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-neutral-100 text-neutral-400 rounded-full">
-                      Coming Soon
-                    </span>
-                  )}
-                </div>
-                <p className="text-xs text-secondary-600 font-semibold mb-2">
-                  {ws.instructor} — {ws.credential}
-                </p>
-                <p className="text-sm text-neutral-400 leading-relaxed mb-4">
-                  {ws.description}
-                </p>
-                {ws.featured && (
-                  <div>
-                    <a
-                      href="#"
-                      className="inline-block px-6 py-2.5 bg-primary-800 text-white text-sm font-medium rounded-lg hover:bg-secondary-600 transition-colors"
-                    >
-                      See more
-                    </a>
-                  </div>
                 )}
               </div>
+
+              {/* Arrow buttons */}
+              <button
+                onClick={prev}
+                className="absolute left-[-1.5rem] top-1/2 -translate-y-1/2 w-12 h-12 bg-secondary-600 text-white flex items-center justify-center rounded hover:bg-secondary-600/80 transition-colors"
+                aria-label="Previous"
+              >
+                <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="14,4 6,10 14,16" />
+                </svg>
+              </button>
+              <button
+                onClick={next}
+                className="absolute right-[-1.5rem] top-1/2 -translate-y-1/2 w-12 h-12 bg-secondary-600 text-white flex items-center justify-center rounded hover:bg-secondary-600/80 transition-colors"
+                aria-label="Next"
+              >
+                <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="6,4 14,10 6,16" />
+                </svg>
+              </button>
             </div>
-          ))}
+
+            {/* Title & CTA below image */}
+            <h3 className="text-xl md:text-2xl font-bold text-primary-800 text-center mt-8 max-w-sm">
+              {ws.title} with {ws.instructor} {ws.credential}
+            </h3>
+
+            {ws.featured ? (
+              <a
+                href="#"
+                className="mt-6 inline-block px-10 py-3.5 bg-primary-800 text-white font-medium rounded hover:bg-secondary-600 transition-colors"
+              >
+                See More
+              </a>
+            ) : (
+              <span className="mt-6 inline-block px-10 py-3.5 bg-neutral-100 text-neutral-400 font-medium rounded">
+                Coming Soon
+              </span>
+            )}
+          </div>
+
+          {/* Right — Section heading & description */}
+          <div>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary-800 mb-6">
+              Upcoming Workshops
+            </h2>
+            <p className="text-neutral-500 leading-relaxed text-lg">
+              Step into a space where sport meets growth. Our workshops bring
+              together athletes of all levels to explore training, nutrition, and
+              mindset in a supportive environment. It&apos;s not about being the
+              fastest — it&apos;s about learning, sharing, and thriving together.
+            </p>
+          </div>
         </div>
       </div>
     </section>

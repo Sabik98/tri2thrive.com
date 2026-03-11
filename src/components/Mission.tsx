@@ -104,6 +104,18 @@ export default function Mission() {
         </div>
       </div>
 
+      {/* Arc divider */}
+      <div className="relative h-16 md:h-24 -mb-1 mt-20">
+        <svg
+          viewBox="0 0 1440 80"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="absolute inset-0 w-full h-full block"
+          preserveAspectRatio="none"
+        >
+          <path d="M0 0C360 80 1080 80 1440 0V80H0Z" fill="#002D48" />
+        </svg>
+      </div>
     </section>
   );
 }

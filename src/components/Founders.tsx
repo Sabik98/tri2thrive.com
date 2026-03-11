@@ -22,7 +22,7 @@ const founders = [
 export default function Founders() {
   return (
     <section id="team">
-      <h2 className="text-center text-4xl md:text-5xl font-bold text-primary-800 py-16 bg-white">
+      <h2 className="text-center text-4xl md:text-5xl font-bold text-primary-800 pt-8 pb-16 bg-white">
         Who are we?
       </h2>
 

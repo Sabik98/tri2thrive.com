@@ -103,6 +103,20 @@ export default function Mission() {
           ))}
         </div>
       </div>
+
+      {/* Diagonal divider */}
+      <div className="relative h-24 md:h-32 -mb-1">
+        <svg
+          viewBox="0 0 1440 100"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="absolute inset-0 w-full h-full block"
+          preserveAspectRatio="none"
+        >
+          <polygon points="0,0 1440,100 0,100" fill="#f8f9fa" />
+          <polygon points="0,0 1440,0 1440,100" fill="#ffffff" />
+        </svg>
+      </div>
     </section>
   );
 }

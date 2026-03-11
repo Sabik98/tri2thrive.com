@@ -24,11 +24,11 @@ export default function Hero() {
           alt="Tri2Thrive"
           width={500}
           height={250}
-          className="mx-auto w-48 md:w-56 lg:w-64 h-auto"
+          className="mx-auto w-40 md:w-48 lg:w-56 h-auto mb-8"
           priority
         />
 
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white text-center leading-tight max-w-3xl">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white text-center leading-tight max-w-3xl uppercase">
           Flowers don&apos;t compete —<br />
           they just <span className="text-[#FFE7B8]">thrive.</span>
         </h1>

@@ -2,18 +2,20 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-6">
+    <section className="relative min-h-[120vh] flex flex-col items-center justify-center px-6">
       {/* Background image */}
       <Image
         src="/images/hero-bg.jpg"
         alt=""
         fill
-        className="object-cover"
+        className="object-contain object-top"
         priority
       />
+      {/* Fill remaining space with matching color */}
+      <div className="absolute inset-0 bg-[#3a5a6e]" style={{ zIndex: -1 }} />
 
-      {/* Navy overlay 50% */}
-      <div className="absolute inset-0 bg-primary-800/50" />
+      {/* Navy overlay 75% */}
+      <div className="absolute inset-0 bg-primary-800/75" />
 
       {/* Content */}
       <div className="relative z-10 text-center">

@@ -17,51 +17,48 @@ const founders = [
 
 export default function Founders() {
   return (
-    <section id="team" className="py-24 px-6">
-      <div className="mx-auto max-w-4xl">
-        <h2 className="text-center text-3xl font-bold text-primary-800 mb-16">
+    <section id="team" className="py-32 px-6">
+      <div className="mx-auto max-w-5xl">
+        <h2 className="text-center text-3xl md:text-4xl font-bold text-primary-800 mb-20">
           Who are we?
         </h2>
 
-        <div className="space-y-8 max-w-2xl mx-auto">
+        <div className="space-y-12 max-w-3xl mx-auto">
           {founders.map((f) => (
             <div
               key={f.name}
-              className="flex items-center gap-6 md:gap-8"
+              className="flex flex-col sm:flex-row items-center sm:items-start gap-8 bg-white rounded-2xl p-8 md:p-10 border border-neutral-100 hover:shadow-lg transition-shadow duration-300"
             >
-              {/* Photo */}
               <div className="shrink-0">
                 <Image
                   src={f.photo}
                   alt={f.name}
                   width={300}
                   height={300}
-                  className="w-28 h-28 md:w-32 md:h-32 rounded-full object-cover"
+                  className="w-36 h-36 md:w-40 md:h-40 rounded-full object-cover"
                 />
               </div>
 
-              {/* Info */}
-              <div className="min-w-0">
-                <h3 className="text-lg md:text-xl font-bold text-primary-800 uppercase tracking-wide">
+              <div className="text-center sm:text-left">
+                <h3 className="text-xl md:text-2xl font-bold text-primary-800 uppercase tracking-wide">
                   {f.name}
                 </h3>
-                <div className="w-10 h-0.5 bg-secondary-600 mt-1.5 mb-3" />
-                <p className="text-sm text-secondary-600 font-medium mb-2">
+                <div className="w-12 h-0.5 bg-secondary-600 mt-2 mb-3 mx-auto sm:mx-0" />
+                <p className="text-sm text-secondary-600 font-semibold mb-3">
                   {f.role}
                 </p>
-                <p className="text-sm text-neutral-400 leading-relaxed italic">
+                <p className="text-neutral-400 leading-relaxed italic">
                   &ldquo;{f.bio}&rdquo;
                 </p>
 
-                {/* Social */}
-                <div className="flex gap-2 mt-3">
+                <div className="flex gap-2.5 mt-5 justify-center sm:justify-start">
                   {["fb", "ig"].map((s) => (
                     <a
                       key={s}
                       href="#"
-                      className="w-7 h-7 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-300 hover:bg-primary-800 hover:text-white transition-colors"
+                      className="w-9 h-9 rounded-full bg-neutral-50 flex items-center justify-center text-neutral-300 hover:bg-primary-800 hover:text-white transition-colors"
                     >
-                      <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+                      <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
                         {s === "fb" ? (
                           <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
                         ) : (

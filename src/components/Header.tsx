@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const navLinks = [
   { href: "#mission", label: "Our Mission" },
@@ -15,12 +16,16 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-neutral-200">
-      <div className="mx-auto max-w-6xl flex items-center justify-between px-6 py-5">
-        <Link
-          href="/"
-          className="font-[family-name:var(--font-heading)] text-xl font-bold tracking-tight text-primary-800"
-        >
-          tri<span className="text-secondary-600">2</span>thrive
+      <div className="mx-auto max-w-6xl flex items-center justify-between px-6 py-3">
+        <Link href="/">
+          <Image
+            src="/logo/logo-black.png"
+            alt="Tri2Thrive"
+            width={140}
+            height={50}
+            className="h-10 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}

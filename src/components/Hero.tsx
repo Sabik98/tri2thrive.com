@@ -1,14 +1,19 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section className="min-h-[85vh] flex items-center justify-center pt-20">
       <div className="mx-auto max-w-3xl px-6 text-center">
-        {/* Logo mark */}
-        <div className="mb-8 flex justify-center">
-          <div className="w-20 h-20 rounded-full bg-primary-800 flex items-center justify-center">
-            <span className="font-[family-name:var(--font-heading)] text-2xl font-bold text-white">
-              T2T
-            </span>
-          </div>
+        {/* Logo */}
+        <div className="mb-10 flex justify-center">
+          <Image
+            src="/logo/logo-black.png"
+            alt="Tri2Thrive"
+            width={400}
+            height={200}
+            className="w-64 md:w-80 h-auto"
+            priority
+          />
         </div>
 
         <h1 className="font-[family-name:var(--font-heading)] text-4xl md:text-6xl font-bold text-primary-800 leading-tight">

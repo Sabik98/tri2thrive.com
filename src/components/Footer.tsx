@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -7,13 +8,16 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <Link
-              href="/"
-              className="font-[family-name:var(--font-heading)] text-xl font-bold"
-            >
-              tri<span className="text-secondary-600">2</span>thrive
+            <Link href="/">
+              <Image
+                src="/logo/logo-cream.png"
+                alt="Tri2Thrive"
+                width={160}
+                height={60}
+                className="h-12 w-auto"
+              />
             </Link>
-            <p className="mt-3 text-primary-400 text-sm leading-relaxed max-w-xs">
+            <p className="mt-4 text-primary-400 text-sm leading-relaxed max-w-xs">
               Flowers don&apos;t compete — they just thrive. So can you.
             </p>
           </div>

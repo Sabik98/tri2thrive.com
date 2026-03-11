@@ -21,16 +21,19 @@ const founders = [
 
 export default function Founders() {
   return (
-    <section id="team">
-      <h2 className="text-center text-4xl md:text-5xl font-bold text-primary-800 pt-8 pb-16 bg-white">
-        Who are we?
-      </h2>
-
+    <section id="team" className="relative">
+      {/* Split-screen grid */}
       <div className="grid md:grid-cols-2">
+        {/* Heading overlay — spans both halves */}
+        <div className="absolute top-0 left-0 right-0 z-20 flex justify-center pt-8 md:pt-10 pointer-events-none">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#FFE7B8] uppercase tracking-wide drop-shadow-lg">
+            Who are we?
+          </h2>
+        </div>
         {founders.map((f) => (
           <div
             key={f.name}
-            className={`${f.bg} flex flex-col items-center justify-center px-8 py-20 md:py-28 text-center`}
+            className={`${f.bg} flex flex-col items-center justify-center px-8 pt-28 pb-20 md:pt-36 md:pb-28 text-center`}
           >
             <Image
               src={f.photo}

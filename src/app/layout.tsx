@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, DM_Sans, Space_Mono } from "next/font/google";
+import { Anton, DM_Sans, Space_Mono } from "next/font/google";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
+const anton = Anton({
   subsets: ["latin"],
+  weight: "400",
   variable: "--font-heading",
   display: "swap",
 });
@@ -35,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${spaceGrotesk.variable} ${dmSans.variable} ${spaceMono.variable} antialiased`}
+        className={`${anton.variable} ${dmSans.variable} ${spaceMono.variable} antialiased`}
       >
         {children}
       </body>

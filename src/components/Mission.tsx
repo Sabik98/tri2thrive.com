@@ -3,22 +3,19 @@ import Image from "next/image";
 const pillars = [
   {
     title: "Community",
-    description:
-      "Supporting each other through hard training sessions, group rides, and open water swims.",
+    text: "Supporting each other through hard training sessions, group rides, and open water swims.",
   },
   {
     title: "Learning",
-    description:
-      "Sharing knowledge, experiences, and coaching insights so everyone can grow.",
+    text: "Sharing knowledge, experiences, and coaching insights so everyone can grow.",
   },
   {
     title: "Inspiration",
-    description:
-      "You don't have to be a pro to chase big goals—whether it's your first 5K, a triathlon, or an Ironman.",
+    text: "You don\u2019t have to be a pro to chase big goals\u2014whether it\u2019s your first 5K, a triathlon, or an Ironman.",
   },
 ];
 
-const missionImages = [
+const photos = [
   "/images/mission-1.png",
   "/images/mission-2.png",
   "/images/mission-3.png",
@@ -29,43 +26,39 @@ const missionImages = [
 
 export default function Mission() {
   return (
-    <section id="mission" className="py-20 md:py-28 bg-white">
-      <div className="mx-auto max-w-5xl px-6">
-        <div className="text-center mb-12">
-          <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl font-bold text-primary-800 mb-6">
-            Our Mission
-          </h2>
-          <p className="text-neutral-400 max-w-2xl mx-auto leading-relaxed">
-            At Tri2Thrive, we believe sport is more than finish lines and podiums — it&apos;s about movement, growth, and connection.
-          </p>
-        </div>
+    <section id="mission" className="py-24 px-6 bg-neutral-50">
+      <div className="mx-auto max-w-4xl">
+        <h2 className="text-center text-3xl font-bold text-primary-800 mb-4">
+          Our Mission
+        </h2>
+        <p className="text-center text-neutral-500 leading-relaxed max-w-2xl mx-auto mb-16">
+          At Tri2Thrive, we believe sport is more than finish lines and podiums
+          — it&apos;s about movement, growth, and connection.
+        </p>
 
-        {/* Three pillars */}
-        <div className="grid md:grid-cols-3 gap-10 mb-16">
-          {pillars.map((pillar) => (
-            <div key={pillar.title} className="text-center">
-              <h3 className="font-[family-name:var(--font-heading)] text-xl font-bold text-primary-800 mb-3">
-                {pillar.title}
+        <div className="grid md:grid-cols-3 gap-12 mb-16">
+          {pillars.map((p) => (
+            <div key={p.title} className="text-center">
+              <h3 className="text-lg font-bold text-primary-800 mb-2">
+                {p.title}
               </h3>
-              <p className="text-neutral-400 text-sm leading-relaxed">
-                {pillar.description}
+              <p className="text-sm text-neutral-500 leading-relaxed">
+                {p.text}
               </p>
             </div>
           ))}
         </div>
 
-        {/* Circular team photos */}
-        <div className="flex flex-wrap justify-center gap-6">
-          {missionImages.map((src, i) => (
-            <div key={i} className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden">
-              <Image
-                src={src}
-                alt={`Team member ${i + 1}`}
-                width={300}
-                height={300}
-                className="w-full h-full object-cover"
-              />
-            </div>
+        <div className="flex flex-wrap justify-center gap-4">
+          {photos.map((src, i) => (
+            <Image
+              key={i}
+              src={src}
+              alt=""
+              width={300}
+              height={300}
+              className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover"
+            />
           ))}
         </div>
       </div>

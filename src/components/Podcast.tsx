@@ -9,7 +9,7 @@ export default function Podcast() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Left — Text content */}
           <div>
-            <p className="text-secondary-600 text-sm font-semibold uppercase tracking-widest mb-4">
+            <p className="text-[#FFE7B8] text-sm font-semibold uppercase tracking-widest mb-4">
               Listen Now
             </p>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">

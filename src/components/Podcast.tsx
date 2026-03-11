@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Podcast() {
   return (
     <section id="podcast" className="py-24 px-6">
@@ -8,12 +6,13 @@ export default function Podcast() {
           Our Podcast
         </h2>
         <div className="max-w-xl mx-auto rounded-xl overflow-hidden">
-          <Image
-            src="/images/podcast.jpg"
-            alt="Tri2Thrive Podcast"
-            width={768}
-            height={536}
-            className="w-full h-auto"
+          <iframe
+            src="https://open.spotify.com/embed/show/3VitQ9rEuYp8NFFIcehYa9?utm_source=generator&theme=0"
+            width="100%"
+            height="352"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+            className="rounded-xl border-0"
           />
         </div>
       </div>

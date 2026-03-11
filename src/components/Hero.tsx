@@ -24,7 +24,7 @@ export default function Hero() {
           alt="Tri2Thrive"
           width={500}
           height={250}
-          className="mx-auto w-64 md:w-80 lg:w-96 h-auto"
+          className="mx-auto w-48 md:w-56 lg:w-64 h-auto"
           priority
         />
 

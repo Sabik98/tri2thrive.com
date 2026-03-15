@@ -5,6 +5,7 @@ const sponsors = [
   { name: "Berghaus", href: "https://berghaus-tinyhouse.com", logo: "/sponsors/berghaus.png" },
   { name: "Dennis.cz", href: "https://dennis.cz", logo: "/sponsors/dennis-cz.png" },
   { name: "Beye.blog", href: "https://beye.blog", logo: "/sponsors/beye-blog.png" },
+  { name: "NetBox Labs", href: "https://netboxlabs.com", logo: "/sponsors/netboxlabs.png" },
 ];
 
 export default function Sponsors() {
@@ -14,7 +15,7 @@ export default function Sponsors() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-800/3 rounded-full blur-3xl" />
 
       <div className="relative mx-auto max-w-5xl">
-        <p className="text-center text-[#FFE7B8] text-sm font-semibold uppercase tracking-widest mb-4">
+        <p className="text-center text-secondary-600 text-sm font-semibold uppercase tracking-widest mb-4">
           Backed by
         </p>
         <h2 className="text-center text-4xl md:text-5xl font-bold text-primary-800 mb-6">
@@ -25,7 +26,7 @@ export default function Sponsors() {
           help make Tri2Thrive possible.
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 max-w-5xl mx-auto">
           {sponsors.map((s) => (
             <a
               key={s.name}

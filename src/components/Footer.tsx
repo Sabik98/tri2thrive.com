@@ -7,11 +7,11 @@ export default function Footer() {
       <div className="mx-auto max-w-5xl text-center">
         <Link href="/">
           <Image
-            src="/logo/logo-cream.png"
+            src="/logo/logo-gold.png"
             alt="Tri2Thrive"
-            width={200}
-            height={80}
-            className="mx-auto h-16 w-auto mb-6"
+            width={400}
+            height={200}
+            className="mx-auto w-48 md:w-64 h-auto mb-6"
           />
         </Link>
 
